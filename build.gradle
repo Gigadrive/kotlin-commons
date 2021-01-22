@@ -20,6 +20,7 @@ repositories {
 dependencies {
     api "commons-io:commons-io:2.4"
     api "com.google.code.gson:gson:2.8.5"
+    api "org.koin:koin-core:2.2.0"
 
     compileOnly "org.projectlombok:lombok:1.18.16"
     annotationProcessor "org.projectlombok:lombok:1.18.16"
