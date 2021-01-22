@@ -2,6 +2,7 @@ plugins {
     id "org.jetbrains.dokka" version "1.4.0"
     id "org.jetbrains.kotlin.jvm" version "1.4.20"
     id "com.github.johnrengelman.shadow" version "6.0.0"
+    id "maven-publish"
 }
 
 def javaVersion = JavaVersion.VERSION_1_8
@@ -65,4 +66,28 @@ tasks.shadowJar {
 
 tasks.build {
     dependsOn(shadowJar)
+}
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url "https://gitlab.com/api/v4/projects/23841941/packages/maven"
+            name "GitLab"
+
+            credentials(HttpHeaderCredentials) {
+                name = "Job-Token"
+                value = System.getenv("CI_JOB_TOKEN")
+            }
+
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
 }
