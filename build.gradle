@@ -23,6 +23,9 @@ dependencies {
     api "com.google.code.gson:gson:2.8.5"
     api "org.koin:koin-core:2.2.0"
 
+    implementation "com.zaxxer:HikariCP:2.6.1"
+    implementation "mysql:mysql-connector-java:5.1.6"
+
     compileOnly "org.projectlombok:lombok:1.18.16"
     annotationProcessor "org.projectlombok:lombok:1.18.16"
 
