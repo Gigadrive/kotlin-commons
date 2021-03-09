@@ -8,7 +8,7 @@ plugins {
 def javaVersion = JavaVersion.VERSION_1_8
 
 group "com.gigadrivegroup"
-version "1.1-SNAPSHOT"
+version "1.2"
 
 repositories {
     mavenLocal()
@@ -22,6 +22,10 @@ dependencies {
     api "commons-io:commons-io:2.4"
     api "com.google.code.gson:gson:2.8.5"
     api "org.koin:koin-core:2.2.0"
+
+    // http
+    api "com.github.kittinunf.fuel:fuel:2.3.1"
+    api "com.github.kittinunf.fuel:fuel-gson:2.3.1"
 
     implementation "com.zaxxer:HikariCP:2.6.1"
     implementation "mysql:mysql-connector-java:5.1.6"
